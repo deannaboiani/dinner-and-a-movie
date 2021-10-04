@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Project 1 - Dinner and a Movie</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Dinner and a Movie</h1>
+    </header>
+    <div>
+      <p>
+        Lately, we have been spending much more time at home. And with that, we
+        have been watching more movies and making more food ourselves. Have you
+        ever been stuck on what to watch or what to eat? Whether you're alone or
+        with someone, you can't decide what to land on so you go with the same
+        food and the same movie you've seen over and over. Well, we have a
+        solution for you! Dinner and a Movie, where we pick what you eat and
+        watch. No more date night fights, or the same boring meal. The user will
+        start on our landing page which will make them hungry and excited based
+        on our color scheme, and once they enter the site they will be brought
+        here, with the name up top and a brief description and instructions. On
+        the left they will have a drop down option for food type with a generate
+        button, a dropdown option with movie genres and generate button, or they
+        can generate both together randomly. On the right we will have a picture
+        of the generated food, the title, list of ingredients and recipe
+        instructions with a link to a video. And on the right of that we will
+        have a movie poster with the ratings, description, where to watch link
+        and year released. If you like one, but not the other, you can click the
+        movie OR food generate button for a new exciting response.
+      </p>
+    </div>
+
+    <!-- SEARCH SECTION -->
+    <div class="row search">
+      <!-- FOOD SEARCH -->
+      <div class="col s12 m4 l3">
+        <div class="input-field col s12">
+          <select class="browser-default">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+          <button id="foodSearchBtn">Search</button>
+          <label></label>
+          <!-- MOVIE SEARCH -->
+          <div class="input-field col s12">
+            <select class="browser-default">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <button id="movieSearchBtn">Search</button>
+            <label></label>
+          </div>
+          <!-- ANOTHER SECTION FOR BOTH/RANDOM CARD + BUTTON-->
+        </div>
+
+        <!-- API SECTION -->
+        <div class="col s12 m8 l9">
+          <!-- MOVIE OUTPUT (JORGE) -->
+          <container>
+            <!-- Note that "m8 l9" was added -->
+            <!-- Teal page content
+  
+                This content will be:
+            9-columns-wide on large screens,
+            8-columns-wide on medium screens,
+            12-columns-wide on small screens  -->
+          </container>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
