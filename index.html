@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Group Project 1 - Dinner and a Movie</title>
     <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
@@ -14,11 +18,11 @@
 
   <body>
     <header>
-      <h1>Dinner and a Movie</h1>
+      <h1 class="center-align">Dinner and a Movie</h1>
     </header>
-    <div>
+    <div class="description center-align">
       <p>
-        Lately, we have been spending much more time at home. And with that, we
+        <!-- Lately, we have been spending much more time at home. And with that, we
         have been watching more movies and making more food ourselves. Have you
         ever been stuck on what to watch or what to eat? Whether you're alone or
         with someone, you can't decide what to land on so you go with the same
@@ -35,14 +39,19 @@
         instructions with a link to a video. And on the right of that we will
         have a movie poster with the ratings, description, where to watch link
         and year released. If you like one, but not the other, you can click the
-        movie OR food generate button for a new exciting response.
+        movie OR food generate button for a new exciting response. -->
+        Welcome to Dinner and a Movie where you randomly choose what to eat and
+        watch so can spend more time doing the things you love
+        <br />
+        Click on the food and movie buttons below and a random dish and movie
+        will generate
       </p>
     </div>
 
-    <!-- SEARCH SECTION -->
-    <div class="row search">
+    <!-- SEARCH AND API RESULTS -->
+    <div class="row" id="container">
       <!-- FOOD SEARCH -->
-      <div class="col s12 m4 l3">
+      <div class="row col s12 m4 l3" id="search">
         <div class="input-field col s12">
           <select class="browser-default">
             <option value="" disabled selected>Choose your option</option>
@@ -56,46 +65,45 @@
           <div class="input-field col s12">
             <select class="browser-default">
               <option value="" disabled selected>Choose your option</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option value="1">Top Rated</option>
+              <option value="2">Popular</option>
             </select>
             <button id="movieSearchBtn">Search</button>
             <label></label>
+            <!-- ANOTHER SECTION FOR BOTH/RANDOM CARD + BUTTON-->
           </div>
-          <!-- ANOTHER SECTION FOR BOTH/RANDOM CARD + BUTTON-->
         </div>
+      </div>
 
-        <!-- API SECTION -->
-        <div class="col s12 m8 l9">
-          <!-- FOOD API (DEANNA) -->
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="foodImage activator" src="" alt="food pic">
-            </div>
-            <div class="card-content">
-              <span class="card-title foodCardTitle activator grey-text text-darken-4"><i class="material-icons right">Recipe</i></span>
-              <p><a href="#"><span id="foodVideo"></span>This is where the recipe video link will be</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title foodCardTitle grey-text text-darken-4"><i class="material-icons right">close</i></span>
-              <p id="foodCardRecipe">Instructions:</p>
-            </div>
+      <!-- API SECTION -->
+      <div class="row col s12 m8 l9" id="results">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="foodImage activator" src="" alt="food pic" />
           </div>
-
-        
-
-          <!-- MOVIE OUTPUT (JORGE) -->
-          <container>
-            <!-- Note that "m8 l9" was added -->
-            <!-- Teal page content
-  
-                This content will be:
-            9-columns-wide on large screens,
-            8-columns-wide on medium screens,
-            12-columns-wide on small screens  -->
-          </container>
+          <div class="card-content">
+            <span
+              class="card-title foodCardTitle activator grey-text text-darken-4"
+              ><i class="material-icons right">Recipe</i></span
+            >
+            <p>
+              <a href="#"
+                ><span id="foodVideo"></span>This is where the recipe video link
+                will be</a
+              >
+            </p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title foodCardTitle grey-text text-darken-4"
+              ><i class="material-icons right">close</i></span
+            >
+            <p id="foodCardRecipe">Instructions:</p>
+          </div>
         </div>
+        <!-- FOOD OUTPUT (DEANNA) -->
+        <div class="food" id="foodResults"></div>
+        <!-- MOVIE OUTPUT (JORGE) -->
+        <div class="movie" id="movieResults"></div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
