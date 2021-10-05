@@ -1,0 +1,18 @@
+header {
+  border: 1px solid black;
+}
+
+.desciption {
+  border: 1px solid black;
+}
+/* .row {
+  border: 1px solid black;
+} */
+
+#search {
+  border: 1px solid black;
+}
+
+#results {
+  border: 1px solid black;
+}
