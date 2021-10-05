@@ -9,11 +9,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <!--Import materialize.css-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
@@ -99,6 +100,46 @@
             >
             <p id="foodCardRecipe">Instructions:</p>
           </div>
+
+          <!-- MOVIE OUTPUT (JORGE) -->
+          <container class="container col s12 hide" id="movie-container">
+            <!-- Note that "m8 l9" was added -->
+
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="" id="image" />
+              </div>
+              <div class="card-content">
+                <span
+                  class="card-title activator grey-text text-darken-4"
+                  id="title"
+                  ><i class="material-icons right">more_vert</i></span
+                >
+                <p>Click the image for more details!</p>
+              </div>
+              <div class="card-reveal">
+                <span
+                  class="card-title grey-text text-darken-4"
+                  id="reveal-title"
+                  ><i class="material-icons right">close</i></span
+                >
+                <p id="release-date"></p>
+                <p id="average-rating"></p>
+                <p id="genres"></p>
+                <p>
+                  <a id="where-to-watch" target="_blank"
+                    >Click here to TMDB to find where to watch!</a
+                  >
+                </p>
+                <p id="description"></p>
+              </div>
+            </div>
+
+            <!-- This content will be:
+            9-columns-wide on large screens,
+            8-columns-wide on medium screens,
+            12-columns-wide on small screens  -->
+          </container>
         </div>
         <!-- FOOD OUTPUT (DEANNA) -->
         <div class="food" id="foodResults"></div>
@@ -106,8 +147,9 @@
         <div class="movie" id="movieResults"></div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/script.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
   </body>
 </html>
