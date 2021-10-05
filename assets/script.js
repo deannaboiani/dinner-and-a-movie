@@ -8,7 +8,7 @@ var randomFoodUrl = "www.themealdb.com/api/json/v1/1/random.php"
 var foodGenImage = $('.foodImage')
 
 // grabs random url for food
-function getApi() {
+function getFoodApi() {
     var requestUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
     console.log(requestUrl);
     
@@ -36,5 +36,5 @@ function getApi() {
     )};$('#randomFoodBtn').click(function(event) {
         event.preventDefault();
         console.log('clicked');
-        getApi();
+        getFoodApi();
     })
