@@ -9,6 +9,8 @@ var foodGenImage = $('.foodImage')
 
 // grabs random url for food
 function getFoodApi() {
+    refreshFood();
+
     var requestUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
     console.log(requestUrl);
     
@@ -27,13 +29,22 @@ function getFoodApi() {
             foodName.textContent = data.meals[0].strMeal;
             recipe.textContent = data.meals[0].strInstructions;
             
-            $('.foodCardTitle').append(foodName);
+            $('#foodCardTitle').append(foodName);
             $('#foodCardRecipe').append(recipe);
-
+            $('.foodImage').attr(`src`, (data.meals[0].strMealThumb));
             
         }
         
-    )};$('#randomFoodBtn').click(function(event) {
+    )};
+
+    // refreshes information on button click
+    function refreshFood() {
+        $('#foodCardTitle').empty();
+        $('#foodCardRecipe').empty();
+    }
+
+
+    $('#randomFoodBtn').click(function(event) {
         event.preventDefault();
         console.log('clicked');
         getFoodApi();
