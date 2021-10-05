@@ -50,7 +50,7 @@
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
           </select>
-          <button id="foodSearchBtn">Search</button>
+          <button id="randomFoodBtn">Generate Recipe</button>
           <label></label>
           <!-- MOVIE SEARCH -->
           <div class="input-field col s12">
@@ -68,6 +68,23 @@
 
         <!-- API SECTION -->
         <div class="col s12 m8 l9">
+          <!-- FOOD API (DEANNA) -->
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="foodImage activator" src="" alt="food pic">
+            </div>
+            <div class="card-content">
+              <span class="card-title foodCardTitle activator grey-text text-darken-4"><i class="material-icons right">Recipe</i></span>
+              <p><a href="#"><span id="foodVideo"></span>This is where the recipe video link will be</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title foodCardTitle grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              <p id="foodCardRecipe">Instructions:</p>
+            </div>
+          </div>
+
+        
+
           <!-- MOVIE OUTPUT (JORGE) -->
           <container>
             <!-- Note that "m8 l9" was added -->
@@ -81,6 +98,7 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/script.js"></script>
   </body>
