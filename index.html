@@ -52,7 +52,7 @@
     <!-- SEARCH AND API RESULTS -->
     <div class="row" id="container">
       <!-- FOOD SEARCH -->
-      <div class="row col s12 m4 l3" id="search">
+      <div class="col s3" id="search">
         <div class="input-field col s12">
           <select class="browser-default">
             <option value="" disabled selected>Choose your option</option>
@@ -62,6 +62,7 @@
           </select>
           <button id="randomFoodBtn">Generate Recipe</button>
           <label></label>
+          </div>
           <!-- MOVIE SEARCH -->
           <div class="input-field col s12">
             <select class="browser-default">
@@ -73,19 +74,22 @@
             <label></label>
             <!-- ANOTHER SECTION FOR BOTH/RANDOM CARD + BUTTON-->
           </div>
-        </div>
+     
       </div>
 
       <!-- API SECTION -->
-      <div class="row col s12 m8 l9" id="results">
+      <div class="col s9">
+      <div class="row">
+        <div class="col s6">
+      <container class="container" id="food-container">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="foodImage activator" src="" alt="food pic" />
           </div>
           <div class="card-content">
             <span
-              class="card-title foodCardTitle activator grey-text text-darken-4"
-              ><i class="material-icons right">Recipe</i></span
+              class="card-title activator grey-text text-darken-4"
+              ><span id="foodCardTitle"></span><i>Recipe</i></span
             >
             <p>
               <a href="#"
@@ -95,14 +99,17 @@
             </p>
           </div>
           <div class="card-reveal">
-            <span class="card-title foodCardTitle grey-text text-darken-4"
-              ><i class="material-icons right">close</i></span
+            <span class="card-title grey-text text-darken-4"
+              ><span id="foodCardTitle"></span><i>close</i></span
             >
             <p id="foodCardRecipe">Instructions:</p>
           </div>
-
+        </div>  
+        </container>
+      </div>
           <!-- MOVIE OUTPUT (JORGE) -->
-          <container class="container col s12 hide" id="movie-container">
+        <div class="col s6">
+          <container class="container hide" id="movie-container">
             <!-- Note that "m8 l9" was added -->
 
             <div class="card">
@@ -141,12 +148,17 @@
             12-columns-wide on small screens  -->
           </container>
         </div>
+        </div>
         <!-- FOOD OUTPUT (DEANNA) -->
         <div class="food" id="foodResults"></div>
         <!-- MOVIE OUTPUT (JORGE) -->
         <div class="movie" id="movieResults"></div>
-      </div>
-    </div>
+      
+    
+  </div>
+</div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
