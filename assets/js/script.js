@@ -65,38 +65,15 @@ var whereToWatchEl = $('#where-to-watch');
 
 var movieSearchBtn = $('#movieSearchBtn');
 var movieContainerEl = $('#movie-container');
+var popularEl = $('#popular-true');
+var topRatedEl = $('#top-rated-true');
+var movieChoiceEl = $('#movie-choice');
 
 //this will generate a random page number in our API call.
 var pageNumber;
-var isPopular = false;
-var isTopRated = false;
-
 
 //this will be the request made to the TMDB Api to return a random movie.
 var sampleCall;
-
-if(isPopular){
-
-    pageNumber = Math.floor(Math.random() * 500);
-
-sampleCall = `
-https://api.themoviedb.org/3/movie/popular?api_key=63dbf71c654e332e53fe81842222eb42&language=en-US&page=${pageNumber}`;
-}
-else if(isTopRated){
-
-    pageNumber = Math.floor(Math.random() * 460);
-
-    sampleCall = `
-https://api.themoviedb.org/3/movie/top_rated?api_key=63dbf71c654e332e53fe81842222eb42&language=en-US&page=${pageNumber}`;
-}
-else{
-    pageNumber = Math.floor(Math.random() * 500);
-
-    sampleCall = `https://api.themoviedb.org/3/discover/movie?api_key=63dbf71c654e332e53fe81842222eb42&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_watch_monetization_types=flatrate`;
-}
-
-
-
 
 
 //this will format the date in the way we need it to display.
@@ -122,6 +99,34 @@ function getRandomMovie(){
     var avScore;
     var movieId;
     var genresArray = [];
+
+
+    console.log(movieChoiceEl.val());
+
+
+    //this if statement will process the user's filter choice.
+    if(movieChoiceEl.val() == 2){
+
+        pageNumber = Math.floor(Math.random() * 500);
+    
+    sampleCall = `
+    https://api.themoviedb.org/3/movie/popular?api_key=63dbf71c654e332e53fe81842222eb42&language=en-US&page=${pageNumber}`;
+    }
+    else if(movieChoiceEl.val() == 1){
+    
+        pageNumber = Math.floor(Math.random() * 460);
+    
+        sampleCall = `
+    https://api.themoviedb.org/3/movie/top_rated?api_key=63dbf71c654e332e53fe81842222eb42&language=en-US&page=${pageNumber}`;
+    }
+    else{
+        pageNumber = Math.floor(Math.random() * 500);
+    
+        sampleCall = `https://api.themoviedb.org/3/discover/movie?api_key=63dbf71c654e332e53fe81842222eb42&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_watch_monetization_types=flatrate`;
+    }
+
+
+
 
     
     fetch(sampleCall)
@@ -184,9 +189,20 @@ function getRandomMovie(){
             })
             .then((data) =>{
 
-            var whereToLink = data.results.US.link;
+            var whereToLink;
 
+            if(data.results.US.link == null || data.results.US.link == undefined){
+
+                whereToWatchEl.text(`Sorry! We don't know where you can watch this movie`);
+                whereToWatchEl.attr('href', 'https://www.themoviedb.org/');
+
+            }
+            else{
+
+            whereToLink = data.results.US.link;
             whereToWatchEl.attr('href', whereToLink);
+
+            }
 
             });
         
