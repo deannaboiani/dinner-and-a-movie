@@ -54,21 +54,21 @@
       <!-- FOOD SEARCH -->
       <div class="col s12 m4 l3" id="search">
         <div class="input-field col s12">
-          <select class="browser-default">
+          <select id="foodSelect" class="browser-default">
             <option value="" disabled selected>Choose your option</option>
-            <option value="1">Beef</option>
-            <option value="2">Breakfast</option>
-            <option value="3">Chicken</option>
-            <option value="4">Dessert</option>
-            <option value="5">Goat</option>
-            <option value="6">Lamb</option>
-            <option value="7">Pasta</option>
-            <option value="8">Pork</option>
-            <option value="9">Seafood</option>
-            <option value="10">Side</option>
-            <option value="11">Starter</option>
-            <option value="12">Vegetarian</option>
-            <option value="13">Vegan</option>
+            <option value="Beef">Beef</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Goat">Goat</option>
+            <option value="Lamb">Lamb</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Pork">Pork</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Side">Side</option>
+            <option value="Starter">Starter</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Vegan">Vegan</option>
           </select>
           <button id="randomFoodBtn">Generate Recipe</button>
           <label></label>
@@ -100,7 +100,7 @@
                     ><span id="foodCardTitle"></span><i>Recipe</i></span
                   >
                   <p>
-                    <a class="foodVideo" target="_blank" href="#"
+                    <a id="foodVideo" target="_blank" href="#"
                       >Recipe Video</a
                     >
                   </p>
