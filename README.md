@@ -2,32 +2,27 @@
 
 ## Description
 Have ever been at home on a friday night or have a date night and don't know what to eat and watch? Well, Dinner and a Movie is here to help. Our application will help you by generating a random meal and movie so you more time doing the things you love rather than just deciding. 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
 
-## Table of Contents (Optional)
+- The motivation for this project was to learn how to develop in a collaborative environment and also to implement the skills we have been learning in fetching data from external API's.
+- This project resolves the problem of not being able to decide what to cook and what to watch.
+- We learned how to collaborate on Github while working separately on certain aspects of the page. We also learned how to work with multiple API's to build one cohesive application.  
+
+## Table of Contents 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 
 ## Installation
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+The project can be accessed by clicking [this link](https://deannaboiani.github.io/dinner-and-a-movie/)
 ## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+The user can click the buttons displayed to generate a random meal and movie. They can also use dropdown filters to narrow the possible results. The user can choose to generate a new meal or movie if they are not happy with the result of either.
+
+    ![a screenshot of our page](./assets/images/screenshot_v1.png)
+
 ## Credits
-List your collaborators, if any, with links to their GitHub profiles.
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-If you followed tutorials, include links to those here as well.
+Credits to the Dinner and a Movie Team: DeAnna Boiani, Jorge Barragan, Minhvan Le, and Stephanie Turner. Credits to the [TMDB API](https://www.themoviedb.org/documentation/api?language=en-US) and [the Meal DB API](https://www.themealdb.com/api.php), [Materialize CSS](https://materializecss.com/grid.html). Credits also to the Coding Bootcamp instructors, and TA's.    
 ## Features
-If your project has a lot of features, list them here.
-## How to Contribute
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+Our project features include, generating a random movie or meal separately as well as both at the same time. Another feature is the dropdown search filters.
 ## Tests
+Testing was done by the team directly on the page. 
