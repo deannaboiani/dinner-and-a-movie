@@ -1,28 +1,26 @@
-// $(document).ready(function () {
-//   $("select").formSelect();
-// });
+// randomize both options on button click
+$('#bothBtn').click(function() {
+    randomFoodApi();
+    handleMovieSearch();
+}
+)
+
+var foodContainerEl = $('#food-container');
 
 
 // FOOD API 
-var randomFoodUrl = "www.themealdb.com/api/json/v1/1/random.php"
-var foodGenImage = $('.foodImage')
-
-// grabs random url for food
-function getFoodApi() {
+function randomFoodApi() {
     refreshFood();
 
     var requestUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
-    console.log(requestUrl);
+    foodContainerEl.removeClass('hide');
     
     fetch(requestUrl)
     .then(function (response) {
         return response.json();
-        console.log(response)
+        
     })
     .then(function (data) {
-        console.log(data);
-// creates new elements for food name and recipe instructions to put on page
-            console.log(data.meals[0].strInstructions);
             var foodName = document.createElement('h3');
             var recipe = document.createElement('p');
 
@@ -32,10 +30,42 @@ function getFoodApi() {
             $('#foodCardTitle').append(foodName);
             $('#foodCardRecipe').append(recipe);
             $('.foodImage').attr(`src`, (data.meals[0].strMealThumb));
+            $('#foodVideo').attr(`href`, (data.meals[0].strYoutube));
+    })};
+
+// grabs random url for food
+function getFoodApi() {
+    refreshFood();
+
+    var requestUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
+    foodContainerEl.removeClass('hide')
+    
+    fetch(requestUrl)
+    .then(function (response) {
+        return response.json();
+        
+    })
+    .then(function (data) {
+        
+        if (data.meals[0].strCategory == $('#foodSelect').val()) {
+// creates new elements for food name and recipe instructions to put on page
+          
+            var foodName = document.createElement('h3');
+            var recipe = document.createElement('p');
+
+            foodName.textContent = data.meals[0].strMeal;
+            recipe.textContent = data.meals[0].strInstructions;
             
+            $('#foodCardTitle').append(foodName);
+            $('#foodCardRecipe').append(recipe);
+            $('.foodImage').attr(`src`, (data.meals[0].strMealThumb));
+            $('#foodVideo').attr(`href`, (data.meals[0].strYoutube));
+            
+        } else {
+            getFoodApi();  
         }
         
-    )};
+})};
 
     // refreshes information on button click
     function refreshFood() {
@@ -43,10 +73,9 @@ function getFoodApi() {
         $('#foodCardRecipe').empty();
     }
 
-
+    // on button click, it generates getFoodAPI function
     $('#randomFoodBtn').click(function(event) {
         event.preventDefault();
-        console.log('clicked');
         getFoodApi();
     })
 
