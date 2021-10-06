@@ -52,112 +52,109 @@
     <!-- SEARCH AND API RESULTS -->
     <div class="row" id="container">
       <!-- FOOD SEARCH -->
-      <div class="col s3" id="search">
+      <div class="col s12 m4 l3" id="search">
         <div class="input-field col s12">
           <select class="browser-default">
             <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
+            <option value="1">Beef</option>
+            <option value="2">Breakfast</option>
+            <option value="3">Chicken</option>
+            <option value="4">Dessert</option>
+            <option value="5">Goat</option>
+            <option value="6">Lamb</option>
+            <option value="7">Pasta</option>
+            <option value="8">Pork</option>
+            <option value="9">Seafood</option>
+            <option value="10">Side</option>
+            <option value="11">Starter</option>
+            <option value="12">Vegetarian</option>
+            <option value="13">Vegan</option>
           </select>
           <button id="randomFoodBtn">Generate Recipe</button>
           <label></label>
-          </div>
-          <!-- MOVIE SEARCH -->
-          <div class="input-field col s12">
-            <select class="browser-default">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">Top Rated</option>
-              <option value="2">Popular</option>
-            </select>
-            <button id="movieSearchBtn">Search</button>
-            <label></label>
-            <!-- ANOTHER SECTION FOR BOTH/RANDOM CARD + BUTTON-->
-          </div>
-     
+        </div>
+        <!-- MOVIE SEARCH -->
+        <div class="input-field col s12">
+          <select class="browser-default">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Top Rated</option>
+            <option value="2">Popular</option>
+          </select>
+          <button id="movieSearchBtn">Generate Movie</button>
+          <label></label>
+          <!-- ANOTHER SECTION FOR BOTH/RANDOM CARD + BUTTON-->
+        </div>
       </div>
 
       <!-- API SECTION -->
-      <div class="col s9">
-      <div class="row">
-        <div class="col s6">
-      <container class="container" id="food-container">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="foodImage activator" src="" alt="food pic" />
-          </div>
-          <div class="card-content">
-            <span
-              class="card-title activator grey-text text-darken-4"
-              ><span id="foodCardTitle"></span><i>Recipe</i></span
-            >
-            <p>
-              <a href="#"
-                ><span id="foodVideo"></span>This is where the recipe video link
-                will be</a
-              >
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4"
-              ><span id="foodCardTitle"></span><i>close</i></span
-            >
-            <p id="foodCardRecipe">Instructions:</p>
-          </div>
-        </div>  
-        </container>
-      </div>
-          <!-- MOVIE OUTPUT (JORGE) -->
-        <div class="col s6">
-          <container class="container hide" id="movie-container">
-            <!-- Note that "m8 l9" was added -->
-
-            <div class="card">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="" id="image" />
-              </div>
-              <div class="card-content">
-                <span
-                  class="card-title activator grey-text text-darken-4"
-                  id="title"
-                  ><i class="material-icons right">more_vert</i></span
-                >
-                <p>Click the image for more details!</p>
-              </div>
-              <div class="card-reveal">
-                <span
-                  class="card-title grey-text text-darken-4"
-                  id="reveal-title"
-                  ><i class="material-icons right">close</i></span
-                >
-                <p id="release-date"></p>
-                <p id="average-rating"></p>
-                <p id="genres"></p>
-                <p>
-                  <a id="where-to-watch" target="_blank"
-                    >Click here to TMDB to find where to watch!</a
+      <div class="col s12 m8 l9">
+        <div class="row">
+          <div class="col s6">
+            <container class="container" id="food-container">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="foodImage activator" src="" alt="food pic" />
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4"
+                    ><span id="foodCardTitle"></span><i>Recipe</i></span
                   >
-                </p>
-                <p id="description"></p>
+                  <p>
+                    <a class="foodVideo" target="_blank" href="#"
+                      >Recipe Video</a
+                    >
+                  </p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4"
+                    ><span id="foodCardTitle"></span><i>close</i></span
+                  >
+                  <p id="foodCardRecipe">Instructions:</p>
+                </div>
               </div>
-            </div>
-
-            <!-- This content will be:
-            9-columns-wide on large screens,
-            8-columns-wide on medium screens,
-            12-columns-wide on small screens  -->
-          </container>
-        </div>
+            </container>
+          </div>
+          <!-- MOVIE OUTPUT (JORGE) -->
+          <div class="col s6">
+            <container class="container hide" id="movie-container">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="" id="image" />
+                </div>
+                <div class="card-content">
+                  <span
+                    class="card-title activator grey-text text-darken-4"
+                    id="title"
+                    ><i class="material-icons right">more_vert</i></span
+                  >
+                  <p>Click the image for more details!</p>
+                </div>
+                <div class="card-reveal">
+                  <span
+                    class="card-title grey-text text-darken-4"
+                    id="reveal-title"
+                    ><i class="material-icons right">close</i></span
+                  >
+                  <p id="release-date"></p>
+                  <p id="average-rating"></p>
+                  <p id="genres"></p>
+                  <p>
+                    <a id="where-to-watch" target="_blank"
+                      >Click here to TMDB to find where to watch!</a
+                    >
+                  </p>
+                  <p id="description"></p>
+                </div>
+              </div>
+            </container>
+          </div>
         </div>
         <!-- FOOD OUTPUT (DEANNA) -->
         <div class="food" id="foodResults"></div>
         <!-- MOVIE OUTPUT (JORGE) -->
         <div class="movie" id="movieResults"></div>
-      
-    
-  </div>
-</div>
-
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
