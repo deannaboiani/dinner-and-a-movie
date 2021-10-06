@@ -16,7 +16,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 ## Installation
 The project can be accessed by clicking [this link](https://deannaboiani.github.io/dinner-and-a-movie/)
 ## Usage
-The user can click the buttons displayed to generate a random meal and movie. They can also use dropdown filters to narrow the possible results. The user can choose to generate a new meal or movie if they are not happy with the result of either.
+The user can click the buttons displayed to generate a random meal and movie. They can also use dropdown filters to narrow the possible results. The user can choose to generate a new meal or movie if they are not happy with the result of either. Please see the screenshot below.
 
 ![a screenshot of our page](./assets/images/screenshot_v1.png)
 
