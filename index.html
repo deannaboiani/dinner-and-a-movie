@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Project 1 - Dinner and a Movie</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="center-align">Dinner and a Movie</h1>
+    </header>
+    <div class="description center-align">
+      <p>
+        <!-- Lately, we have been spending much more time at home. And with that, we
+        have been watching more movies and making more food ourselves. Have you
+        ever been stuck on what to watch or what to eat? Whether you're alone or
+        with someone, you can't decide what to land on so you go with the same
+        food and the same movie you've seen over and over. Well, we have a
+        solution for you! Dinner and a Movie, where we pick what you eat and
+        watch. No more date night fights, or the same boring meal. The user will
+        start on our landing page which will make them hungry and excited based
+        on our color scheme, and once they enter the site they will be brought
+        here, with the name up top and a brief description and instructions. On
+        the left they will have a drop down option for food type with a generate
+        button, a dropdown option with movie genres and generate button, or they
+        can generate both together randomly. On the right we will have a picture
+        of the generated food, the title, list of ingredients and recipe
+        instructions with a link to a video. And on the right of that we will
+        have a movie poster with the ratings, description, where to watch link
+        and year released. If you like one, but not the other, you can click the
+        movie OR food generate button for a new exciting response. -->
+        Welcome to Dinner and a Movie where you randomly choose what to eat and
+        watch so can spend more time doing the things you love
+        <br />
+        Click on the food and movie buttons below and a random dish and movie
+        will generate
+      </p>
+    </div>
+
+    <!-- SEARCH AND API RESULTS -->
+    <div class="row" id="container">
+      <!-- FOOD SEARCH -->
+      <div class="col s12 m4 l3" id="search">
+        <div class="input-field col s12">
+          <select id="foodSelect" class="browser-default">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="Beef">Beef</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Goat">Goat</option>
+            <option value="Lamb">Lamb</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Pork">Pork</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Side">Side</option>
+            <option value="Starter">Starter</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+          </select>
+          <button id="randomFoodBtn">Generate Recipe</button>
+          <label></label>
+        </div>
+        <!-- MOVIE SEARCH -->
+        <div class="input-field col s12">
+          <select class="browser-default" id="movie-choice">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1" id="top-rated-true">Top Rated</option>
+            <option value="2" id="popular-true">Popular</option>
+          </select>
+          <button id="movieSearchBtn">Generate Movie</button>
+          <label></label>
+          <!-- ANOTHER SECTION FOR BOTH/RANDOM CARD + BUTTON-->
+        </div>
+        <button id="bothBtn">Randomize Both</button>
+      </div>
+
+      <!-- API SECTION -->
+      <div class="col s12 m8 l9">
+        <div class="row">
+          <div class="col s6">
+            <container class="container hide" id="food-container">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="foodImage activator" src="" alt="food pic" />
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4"
+                    ><span id="foodCardTitle"></span><i>Recipe</i></span
+                  >
+                  <p>
+                    <a id="foodVideo" target="_blank" href="#"
+                      >Recipe Video</a
+                    >
+                  </p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4"
+                    ><span id="foodCardTitle"></span><i>close</i></span
+                  >
+                  <p id="foodCardRecipe">Instructions:</p>
+                </div>
+              </div>
+            </container>
+          </div>
+          <!-- MOVIE OUTPUT (JORGE) -->
+          <div class="col s6">
+            <container class="container hide" id="movie-container">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="" id="image" />
+                </div>
+                <div class="card-content">
+                  <span
+                    class="card-title activator grey-text text-darken-4"
+                    id="title"
+                    ><i class="material-icons right">more_vert</i></span
+                  >
+                  <p>Click the image for more details!</p>
+                </div>
+                <div class="card-reveal">
+                  <span
+                    class="card-title grey-text text-darken-4"
+                    id="reveal-title"
+                    ><i class="material-icons right">close</i></span
+                  >
+                  <p id="release-date"></p>
+                  <p id="average-rating"></p>
+                  <p id="genres"></p>
+                  <p>
+                    <a id="where-to-watch" target="_blank"
+                      >Click here to TMDB to find where to watch!</a
+                    >
+                  </p>
+                  <p id="description"></p>
+                </div>
+              </div>
+            </container>
+          </div>
+        </div>
+        <!-- FOOD OUTPUT (DEANNA) -->
+        <div class="food" id="foodResults"></div>
+        <!-- MOVIE OUTPUT (JORGE) -->
+        <div class="movie" id="movieResults"></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+  </body>
+</html>
