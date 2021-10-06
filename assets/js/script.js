@@ -13,7 +13,6 @@ function randomFoodApi() {
     refreshFood();
 
     var requestUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
-    foodContainerEl.removeClass('hide');
     
     fetch(requestUrl)
     .then(function (response) {
@@ -38,7 +37,7 @@ function getFoodApi() {
     refreshFood();
 
     var requestUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
-    foodContainerEl.removeClass('hide')
+
     
     fetch(requestUrl)
     .then(function (response) {
@@ -74,11 +73,21 @@ function getFoodApi() {
     }
 
     // on button click, it generates getFoodAPI function
-    $('#randomFoodBtn').click(function(event) {
-        event.preventDefault();
-        getFoodApi();
-    })
+    $('#randomFoodBtn').click(handleFoodSearch);
 
+    // checks if an option is picked, if not it will generate random, if so it will generate response in that category
+    function handleFoodSearch(){
+        foodContainerEl.removeClass('hide');
+        console.log($('#foodSelect').val())
+
+        if ($('#foodSelect').val() != null) {
+            getFoodApi();
+        } else {
+            randomFoodApi();
+        }
+       
+    }
+    
 
 
     /** THIS IS THE BEGINING OF THE MOVIE FEATURE (jorge) */
