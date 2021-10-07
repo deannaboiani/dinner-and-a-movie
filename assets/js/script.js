@@ -1,6 +1,11 @@
 // randomize both options on button click
+<<<<<<< HEAD
 $('#bothBtn').click(function () {
     randomFoodApi();
+=======
+$('#bothBtn').click(function() {
+    handleFoodSearch();
+>>>>>>> dev
     handleMovieSearch();
 }
 )
@@ -82,10 +87,19 @@ function handleFoodSearch() {
     foodContainerEl.removeClass('hide');
     console.log($('#foodSelect').val())
 
+<<<<<<< HEAD
     if ($('#foodSelect').val() != null) {
         getFoodApi();
     } else {
         randomFoodApi();
+=======
+        if ($('#foodSelect').val() != null && $('#foodSelect').val() != 'none'){
+            getFoodApi();
+        } else {
+            randomFoodApi();
+        }
+       
+>>>>>>> dev
     }
 
 }
