@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group Project 1 - Dinner and a Movie</title>
+    <title>Group Project 1 - Dinner and A Movie</title>
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -19,33 +19,16 @@
 
   <body>
     <header>
-      <h1 class="center-align">Dinner and a Movie</h1>
+      <h1 class="center-align">Dinner and A Movie</h1>
     </header>
     <div class="description center-align">
       <p>
-        <!-- Lately, we have been spending much more time at home. And with that, we
-        have been watching more movies and making more food ourselves. Have you
-        ever been stuck on what to watch or what to eat? Whether you're alone or
-        with someone, you can't decide what to land on so you go with the same
-        food and the same movie you've seen over and over. Well, we have a
-        solution for you! Dinner and a Movie, where we pick what you eat and
-        watch. No more date night fights, or the same boring meal. The user will
-        start on our landing page which will make them hungry and excited based
-        on our color scheme, and once they enter the site they will be brought
-        here, with the name up top and a brief description and instructions. On
-        the left they will have a drop down option for food type with a generate
-        button, a dropdown option with movie genres and generate button, or they
-        can generate both together randomly. On the right we will have a picture
-        of the generated food, the title, list of ingredients and recipe
-        instructions with a link to a video. And on the right of that we will
-        have a movie poster with the ratings, description, where to watch link
-        and year released. If you like one, but not the other, you can click the
-        movie OR food generate button for a new exciting response. -->
-        Welcome to Dinner and a Movie where you randomly choose what to eat and
+        Welcome to Dinner and A Movie where you randomly choose what to eat and
         watch so can spend more time doing the things you love
         <br />
-        Click on the food and movie buttons below and a random dish and movie
-        will generate
+        Select the options, click on the food and movie buttons and a random
+        dish and movie will generate or randomize both if you're feeling
+        spontaneous
       </p>
     </div>
 
@@ -54,8 +37,8 @@
       <!-- FOOD SEARCH -->
       <div class="col s12 m4 l3" id="search">
         <div class="input-field col s12">
-          <select id="foodSelect" class="browser-default">
-            <option value="" disabled selected>Choose your option</option>
+          <select id="foodSelect" class="browser-default yellow accent-1">
+            <option value="" enabled selected>Choose your option</option>
             <option value="Beef">Beef</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Chicken">Chicken</option>
@@ -70,27 +53,42 @@
             <option value="Vegetarian">Vegetarian</option>
             <option value="Vegan">Vegan</option>
           </select>
-          <button id="randomFoodBtn">Generate Recipe</button>
+          <a class="waves-effect waves-light btn amber accent-4"
+            ><i class="material-icons left" id="randomFoodBtn">local_dining</i
+            >Generate Food</a
+          >
+          <!-- <button id="randomFoodBtn">Generate Recipe</button> -->
           <label></label>
         </div>
         <!-- MOVIE SEARCH -->
         <div class="input-field col s12">
-          <select class="browser-default" id="movie-choice">
+          <select class="browser-default yellow accent-1" id="movie-choice">
             <option value="" disabled selected>Choose your option</option>
             <option value="1" id="top-rated-true">Top Rated</option>
             <option value="2" id="popular-true">Popular</option>
           </select>
-          <button id="movieSearchBtn">Generate Movie</button>
+          <a class="waves-effect waves-light btn amber accent-4"
+            ><i class="material-icons left" id="movieSearchBtn">local_movies</i
+            >Generate Movie</a
+          >
+          <!-- <button id="movieSearchBtn">Generate Movie</button> -->
           <label></label>
           <!-- ANOTHER SECTION FOR BOTH/RANDOM CARD + BUTTON-->
         </div>
-        <button id="bothBtn">Randomize Both</button>
+        <a
+          class="waves-effect waves-light btn-large amber accent-4"
+          id="bothBtn"
+          ><i class="large material-icons right">local_dining</i
+          ><i class="large material-icons left">local_movies</i>Randomize
+          Both!</a
+        >
+        <!-- <button id="bothBtn">Randomize Both</button> -->
       </div>
 
       <!-- API SECTION -->
       <div class="col s12 m8 l9">
         <div class="row">
-          <div class="col s6">
+          <div class="col s6" id="food">
             <container class="container hide" id="food-container">
               <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
@@ -98,25 +96,25 @@
                 </div>
                 <div class="card-content">
                   <span class="card-title activator grey-text text-darken-4"
-                    ><span id="foodCardTitle"></span><i>Recipe</i></span
-                  >
-                  <p>
-                    <a id="foodVideo" target="_blank" href="#"
-                      >Recipe Video</a
-                    >
-                  </p>
+                    ><span id="foodCardTitle"></span>
+                  </span>
+                  <p>Click the image for more details</p>
                 </div>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4"
-                    ><span id="foodCardTitle"></span><i>close</i></span
+                    ><span id="foodCardTitle"></span
+                    ><i class="material-icons">close</i></span
                   >
+                  <p>
+                    <a id="foodVideo" target="_blank" href="#">Recipe Video</a>
+                  </p>
                   <p id="foodCardRecipe">Instructions:</p>
                 </div>
               </div>
             </container>
           </div>
           <!-- MOVIE OUTPUT (JORGE) -->
-          <div class="col s6">
+          <div class="col s6" id="movie">
             <container class="container hide" id="movie-container">
               <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
