@@ -1,6 +1,6 @@
 // randomize both options on button click
 $('#bothBtn').click(function() {
-    randomFoodApi();
+    handleFoodSearch();
     handleMovieSearch();
 }
 )
@@ -80,7 +80,7 @@ function getFoodApi() {
         foodContainerEl.removeClass('hide');
         console.log($('#foodSelect').val())
 
-        if ($('#foodSelect').val() != null) {
+        if ($('#foodSelect').val() != null && $('#foodSelect').val() != 'none'){
             getFoodApi();
         } else {
             randomFoodApi();
