@@ -18,8 +18,9 @@ The project can be accessed by clicking [this link](https://deannaboiani.github.
 ## Usage
 The user can click the buttons displayed to generate a random meal and movie. They can also use dropdown filters to narrow the possible results. The user can choose to generate a new meal or movie if they are not happy with the result of either.
 
-    ![a screenshot of our page](./assets/images/screenshot_v1.png)
 
+![](https://user-images.githubusercontent.com/89818334/136469164-26913e0a-d745-49ef-9a44-6a6038e04a23.png)
+    
 ## Credits
 Credits to the Dinner and a Movie Team: DeAnna Boiani, Jorge Barragan, Minhvan Le, and Stephanie Turner. Credits to the [TMDB API](https://www.themoviedb.org/documentation/api?language=en-US) and [the Meal DB API](https://www.themealdb.com/api.php), [Materialize CSS](https://materializecss.com/grid.html). Credits also to the Coding Bootcamp instructors, and TA's.    
 ## Features
