@@ -1,14 +1,9 @@
 // randomize both options on button click
-<<<<<<< HEAD
-$('#bothBtn').click(function () {
-    randomFoodApi();
-=======
+
 $('#bothBtn').click(function() {
     handleFoodSearch();
->>>>>>> dev
     handleMovieSearch();
-}
-)
+});
 
 var foodContainerEl = $('#food-container');
 
@@ -85,24 +80,15 @@ $('#randomFoodBtn').click(handleFoodSearch);
 // checks if an option is picked, if not it will generate random, if so it will generate response in that category
 function handleFoodSearch() {
     foodContainerEl.removeClass('hide');
-    console.log($('#foodSelect').val())
-
-<<<<<<< HEAD
-    if ($('#foodSelect').val() != null) {
-        getFoodApi();
-    } else {
-        randomFoodApi();
-=======
-        if ($('#foodSelect').val() != null && $('#foodSelect').val() != 'none'){
+   
+    if ($('#foodSelect').val() != null && $('#foodSelect').val() != 'none'){
             getFoodApi();
         } else {
             randomFoodApi();
         }
        
->>>>>>> dev
-    }
-
 }
+
 
 
 
